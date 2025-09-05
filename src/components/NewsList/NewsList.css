@@ -1,0 +1,47 @@
+/* White background for news-list-container in Saved News page */
+.saved-news__container .news-list-container {
+  background: #fff;
+}
+/* Search Results Section */
+.news-list-container {
+  background: #f5f6fa;
+
+  padding: 48px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.news-list {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  width: 100%;
+  max-width: 1280px;
+}
+
+/* Show More Button */
+.show-more__button {
+  height: 64px;
+  width: 288px;
+  background: #fff;
+  border: none;
+  border-radius: 100px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #1a1b22;
+  padding: 16px 48px;
+  cursor: pointer;
+  margin: 0 auto 48px auto;
+  display: block;
+  transition: box-shadow 0.2s;
+}
+
+.show-more__button:hover {
+  /* box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12); */
+  background-color: #e8e8e8;
+}

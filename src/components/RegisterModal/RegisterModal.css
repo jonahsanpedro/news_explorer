@@ -1,0 +1,60 @@
+.register-modal__title {
+  margin-top: 0;
+  font-family: "Roboto", serif;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 100%;
+}
+
+.register-modal__input-label {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
+}
+
+.register-modal__input {
+  font-family: "Inter", sans-serif;
+  width: 100%;
+  font-size: 1rem;
+  padding: 10px 0 10px 0;
+  border: none;
+  border-bottom: 2px solid #e0e0e0;
+  background: transparent;
+  outline: none;
+  margin-bottom: 12px;
+  color: #222;
+}
+
+.register-modal__input:focus {
+  border-bottom: 2px solid #2962ff;
+}
+
+.register-modal__input-label {
+  font-size: 0.95rem;
+  color: #2962ff;
+  margin-bottom: 2px;
+  font-weight: 500;
+  margin-top: 0;
+}
+
+.register-modal__button {
+  width: 100%;
+  padding: 18px 0;
+  border-radius: 32px;
+  border: none;
+  background: #2962ff;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 18px;
+  margin-bottom: 0;
+  box-shadow: 0 2px 8px rgba(41, 98, 255, 0.08);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.register-modal__button:disabled {
+  background: #b6bcbf;
+  cursor: not-allowed;
+}

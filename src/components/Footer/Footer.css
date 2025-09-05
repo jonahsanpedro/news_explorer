@@ -1,10 +1,54 @@
 .footer {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   margin-top: 85px;
-  font-family: "Cabinet Grotesk", Arial, sans-serif;
   font-size: 16px;
   font-weight: 700;
   line-height: 20px;
+  color: black;
+  contain: content;
+  width: 100%;
+}
+
+.footer__text {
+  font-family: "Roboto";
+  margin: 0 524px 0 104px;
+  size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+  white-space: nowrap;
+  color: #b6bcbf;
+  width: 433px;
+}
+
+.footer-home__button {
+  font-family: "Roboto";
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+  background: none;
+  color: black;
+  border: none;
+  margin: 0 40px 0 0;
+  text-decoration: none;
+}
+
+.footer-tripleten__button {
+  font-family: "Roboto";
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+  background: none;
+  color: black;
+  border: none;
+  margin: 0 40px 0 0;
+  text-decoration: none;
+}
+
+.footer-github__icon {
+  margin-right: 24px;
+}
+
+.footer-fb__icon {
+  margin-right: 24px;
 }

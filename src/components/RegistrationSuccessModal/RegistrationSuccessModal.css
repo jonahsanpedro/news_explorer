@@ -1,0 +1,24 @@
+.registration-success-modal__content {
+  text-align: left;
+  padding: 24px 0 0 0;
+}
+
+.registration-success-modal__title {
+  font-family: "Roboto", serif;
+  font-size: 24px;
+  font-weight: 400;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #111;
+}
+
+.registration-success-modal__signin {
+  background: none;
+  border: none;
+  color: #1976d2;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: 8px;
+  padding: 0;
+}

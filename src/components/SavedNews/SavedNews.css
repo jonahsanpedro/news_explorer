@@ -1,0 +1,104 @@
+.saved-news__container {
+  max-width: 1440px;
+  background: white;
+  min-height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 40px 0 40px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.saved-news__title {
+  font-family: "Roboto", serif;
+  color: rgba(26, 27, 34, 0.5);
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 32px;
+  padding-left: 104px;
+}
+
+.saved-news__username {
+  font-family: "Roboto Slab", serif;
+  font-size: 40px;
+  font-weight: 400;
+  width: 530px;
+  height: 100%;
+  padding-left: 104px;
+}
+
+.saved-news__keywords-title {
+  font-family: "Roboto", serif;
+  color: rgba(26, 27, 34, 1);
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  padding-left: 104px;
+}
+
+.saved-news__keywords-list {
+  font-weight: 700;
+  color: rgba(26, 27, 34, 0.7);
+}
+
+.saved-news__keywords {
+  font-family: "Roboto", serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: rgba(26, 27, 34, 0.7);
+  height: 100%;
+}
+
+.saved-news__no-articles {
+  font-family: "Roboto", serif;
+  color: rgba(26, 27, 34, 0.5);
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0 auto;
+}
+
+.saved-news__not-logged-in {
+  background: white;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a1a1a;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.saved-news__background {
+  background: #fff;
+  min-height: 100vh;
+  width: 100vw;
+}
+
+.saved-news__background .header__logo {
+  filter: brightness(0) invert(0);
+}
+
+.saved-news__background .header__home-button,
+.saved-news__background .header__saved-articles-button,
+.saved-news__background .header__username-button,
+.saved-news__background .header__signin-button {
+  color: #1a1a1a !important;
+  border-color: #1a1a1a;
+}
+
+.saved-news__background .header__logout-icon {
+  filter: brightness(0) invert(0);
+}
+
+.saved-news__background
+  .header__saved-articles-button.header__link_active::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  border-bottom: 2px solid #1a1a1a;
+  position: relative;
+  top: 28px;
+}
