@@ -1,4 +1,4 @@
-import about from "../../images/about.jpg";
+import about from "../../images/drum.jpeg";
 import "./about.css";
 
 function About() {
@@ -8,8 +8,11 @@ function About() {
       <div className="about__content">
         <h3 className="about__title">About the author</h3>
         <p className="about__description">
-          This block describes the project author. Here you should indicate your
-          name, what you do, and which development technologies you know.
+          My name is Jonah. I'm a frontend developer with a passion for creating
+          intuitive and dynamic user experiences. I enjoy turning complex
+          problems into simple, beautiful, and functional designs. When I'm not
+          coding, you'll find me listening to music, playing drums, watching my
+          favorite sports teams or enjoying the company of friends and family.
         </p>
       </div>
     </div>

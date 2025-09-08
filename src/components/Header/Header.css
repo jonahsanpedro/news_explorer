@@ -60,10 +60,12 @@
   }
   .header__drawer-nav {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 24px;
     margin-top: 48px;
     width: 100%;
+    justify-content: space-between;
+    align-items: center;
   }
   .header__drawer-link {
     color: white;
@@ -71,14 +73,11 @@
     text-decoration: none;
     font-weight: 500;
     padding: 12px 0;
-    width: 100%;
-    text-align: left;
+    flex: 1;
+    text-align: center;
     border-radius: 8px;
     transition: background 0.2s;
-  }
-  .header__drawer-link:active,
-  .header__drawer-link:focus {
-    background: #f0f4fa;
+    min-width: 0;
   }
 }
 /* Hide menu button by default */

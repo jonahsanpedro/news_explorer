@@ -136,6 +136,15 @@ function Header({
               >
                 Home
               </NavLink>
+              {isLoggedIn && (
+                <NavLink
+                  to="/saved-news"
+                  className="header__drawer-link"
+                  onClick={() => setDrawerOpen(false)}
+                >
+                  Saved articles
+                </NavLink>
+              )}
             </nav>
             <button
               className="header__drawer-signin"

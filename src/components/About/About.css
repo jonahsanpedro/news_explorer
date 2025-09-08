@@ -36,6 +36,12 @@
   color: black;
 }
 
+@media (max-width: 1440px) {
+  .about__image {
+    border-radius: 50%;
+  }
+}
+
 @media (max-width: 768px) {
   .about {
     flex-direction: row;
