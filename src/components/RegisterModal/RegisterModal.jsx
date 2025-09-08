@@ -8,6 +8,7 @@ function Register({
   handleRegistration,
   handleLoginClick,
   activeModal = "",
+  registrationError = "",
 }) {
   const [data, setData] = useState({ email: "", password: "", username: "" });
 
@@ -23,9 +24,19 @@ function Register({
     setData({ ...data, username: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const [localError, setLocalError] = useState("");
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    handleRegistration(data);
+    if (!data.email || !data.password || !data.username) {
+      setLocalError("Please fill out all fields.");
+      return;
+    }
+    if (!/^\S+@\S+\.\S+$/.test(data.email)) {
+      setLocalError("This email is not available");
+      return;
+    }
+    setLocalError("");
+    await handleRegistration(data);
   };
 
   const onSwitch = () => {
@@ -61,12 +72,13 @@ function Register({
           id="register-email"
           required
           name="email"
-          type="email"
+          type="text"
           value={data.email}
           className="register-modal__input"
           placeholder="Enter email"
           onChange={handleEmailChange}
         />
+        {/* ...existing code... */}
         <label
           htmlFor="register-password"
           className="register-modal__input-label"
@@ -99,6 +111,11 @@ function Register({
           placeholder="Enter username"
           onChange={handleUsernameChange}
         />
+        {(localError || registrationError) && (
+          <div className="register-modal__error">
+            {localError || registrationError}
+          </div>
+        )}
         <button
           type="submit"
           className={`register-modal__button${

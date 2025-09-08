@@ -1,3 +1,104 @@
+@media (max-width: 480px) {
+  .header__drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 230px;
+    background: rgba(26, 27, 34, 1);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px 24px 24px 24px;
+    box-sizing: border-box;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+    animation: fadeInDrawer 0.2s;
+  }
+  .header__drawer-signin {
+    font-family: "Roboto";
+    font-size: 18px;
+    background: none;
+    border: 1px solid white;
+    border-radius: 100px;
+    min-width: 176px;
+    height: 48px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+    margin-left: 0;
+    font-weight: 500;
+  }
+
+  @keyframes fadeInDrawer {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .header__drawer-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    z-index: 10001;
+  }
+  .header__drawer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 48px;
+    width: 100%;
+  }
+  .header__drawer-link {
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 12px 0;
+    width: 100%;
+    text-align: left;
+    border-radius: 8px;
+    transition: background 0.2s;
+  }
+  .header__drawer-link:active,
+  .header__drawer-link:focus {
+    background: #f0f4fa;
+  }
+}
+/* Hide menu button by default */
+.header__menu-btn {
+  display: none;
+}
+/* Animated underline bar for header navigation */
+.header__active-bar {
+  height: 3px;
+  border-radius: 2px;
+  background: white;
+  position: absolute;
+  top: 62px;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  z-index: 2;
+  transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    width 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s;
+}
 @font-face {
   font-family: "Roboto";
   src: url("../../fonts/roboto-500.woff2") format("woff2"),
@@ -97,32 +198,106 @@
   font-weight: bold;
 }
 
-.header__home-button--active::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 3px;
-  border-bottom: 2px solid white;
-  position: relative;
-  top: 27px;
-}
-
-.header__link.header__link_active.active:after {
-  content: "";
-  display: block;
-  position: absolute;
-  left: 30px;
-  right: 24px;
-  bottom: 8px;
-  height: 3px;
-  top: 60px;
-  width: calc(100% - 60px);
-  border-bottom: 2px solid black;
-  z-index: 1;
-}
-
 .header__right {
   display: flex;
   align-items: center;
   gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0 24px;
+    height: 64px;
+    gap: 16px;
+  }
+  .header__logo {
+    width: 120px;
+  }
+  .header__active-bar {
+    top: 54px;
+  }
+  .header__logo-link {
+    margin-right: 16px;
+  }
+  .header__nav {
+    gap: 12px;
+  }
+  .header__button {
+    font-size: 15px;
+    padding: 8px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header__home-button,
+  .header__signin-button,
+  .header__username-button,
+  .header__link {
+    display: none !important;
+  }
+  .header__right {
+    position: relative;
+    width: 100%;
+    height: 56px;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  .header__menu-btn {
+    display: block !important;
+    position: absolute;
+    top: 16px;
+    background: none;
+    border: none;
+    width: 24px;
+    height: 24px;
+    right: 0;
+  }
+  .header__drawer-signin {
+    font-family: "Roboto";
+    font-size: 18px;
+    background: none;
+    border: 1px solid white;
+    border-radius: 100px;
+    min-width: 176px;
+    height: 48px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 500;
+  }
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    z-index: 10;
+    margin: 0 auto;
+    border-bottom: white 1px solid;
+  }
+  .header__logo {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    margin-left: 0;
+  }
+  .header__nav {
+    display: none;
+  }
+  .header__right {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    height: 56px;
+  }
+  .header__active-bar {
+    display: none;
+  }
 }

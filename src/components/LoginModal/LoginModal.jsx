@@ -10,6 +10,7 @@ const Login = ({
   activeModal = "login",
 }) => {
   const [data, setData] = useState({ email: "", password: "" });
+  const [error, setError] = useState("");
 
   useEffect(() => {
     setData({ email: "", password: "" });
@@ -17,6 +18,15 @@ const Login = ({
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!data.email || !data.password) {
+      setError("Please enter both email and password.");
+      return;
+    }
+    if (!isValidEmail(data.email)) {
+      setError("Invalid email address");
+      return;
+    }
+    setError("");
     handleLogin(data.email, data.password);
   };
 
@@ -50,8 +60,31 @@ const Login = ({
           value={data.email}
           className="login-modal__input"
           placeholder="Enter email"
-          onChange={(e) => setData({ ...data, email: e.target.value })}
+          onChange={(e) => {
+            const value = e.target.value;
+            setData({ ...data, email: value });
+            if (value && !isValidEmail(value)) {
+              setError("Invalid email address");
+            } else {
+              setError("");
+            }
+          }}
         />
+        {error && (
+          <div
+            className="login-modal__error"
+            style={{
+              color: "#d32f2f",
+              marginTop: "4px",
+              marginBottom: "8px",
+              fontSize: "15px",
+              fontWeight: "500",
+              textAlign: "left",
+            }}
+          >
+            {error}
+          </div>
+        )}
         <label htmlFor="login-password" className="login-modal__input-label">
           Password
         </label>

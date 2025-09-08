@@ -83,3 +83,61 @@
   text-decoration: underline;
   text-decoration: none;
 }
+
+@media (max-width: 480px) {
+  .modal {
+    width: 100vw;
+    max-width: 480px;
+    margin: 48px auto;
+    border-radius: 16px;
+    box-sizing: border-box;
+    padding: 24px 16px 16px 16px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: relative;
+  }
+  .modal__title {
+    font-size: 1.4rem;
+    margin-bottom: 16px;
+    text-align: left;
+    font-weight: 700;
+    color: #222;
+  }
+  .modal__form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .modal__input {
+    width: 100%;
+    height: 44px;
+    font-size: 1rem;
+    border-radius: 8px;
+    padding: 0 12px;
+    margin-bottom: 8px;
+    border: 1px solid #ccc;
+    background: #f7f7f7;
+    color: #222;
+  }
+  .modal__button {
+    width: 100%;
+    height: 44px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    background: #2f71e5;
+    color: #fff;
+    border: none;
+    margin-top: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(47, 113, 229, 0.1);
+  }
+  .modal__error {
+    color: #ff3b30;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    text-align: left;
+  }
+}

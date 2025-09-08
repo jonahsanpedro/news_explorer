@@ -1,3 +1,71 @@
+@media (max-width: 480px) {
+  .login-modal {
+    width: 100vw;
+    max-width: 320px;
+    margin: 48px auto;
+    padding: 24px 16px 16px 16px;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: relative;
+  }
+  .login-modal__title {
+    font-size: 1.4rem;
+    margin-bottom: 16px;
+    text-align: left;
+    font-weight: 700;
+    color: #222;
+  }
+  .login-modal__form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .login-modal__input {
+    width: 100%;
+    height: 44px;
+    font-size: 1rem;
+    border-radius: 8px;
+    padding: 0 12px;
+    margin-bottom: 8px;
+    border: 1px solid #ccc;
+    background: #f7f7f7;
+    color: #222;
+  }
+  .login-modal__button {
+    width: 100%;
+    height: 44px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    background: #2f71e5;
+    color: #fff;
+    border: none;
+    margin-top: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(47, 113, 229, 0.1);
+  }
+  .login-modal__error {
+    color: #ff3b30;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    text-align: left;
+  }
+}
+.login-modal__error {
+  color: #d32f2f;
+  background: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0 0 8px 0;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: left;
+  display: block;
+}
 .login-modal__title {
   margin-top: 0;
   font-family: "Roboto", serif;
@@ -15,7 +83,6 @@
   border-bottom: 2px solid #e0e0e0;
   background: transparent;
   outline: none;
-  margin-bottom: 12px;
   color: #222;
 }
 
@@ -51,4 +118,10 @@
 .login-modal__button:disabled {
   background: #b6bcbf;
   cursor: not-allowed;
+}
+
+@media screen and (max-width: 400px) {
+  .login-modal {
+    width: 100%;
+  }
 }

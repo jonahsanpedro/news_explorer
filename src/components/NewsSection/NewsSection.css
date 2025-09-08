@@ -11,10 +11,25 @@
   font-size: 36px;
   font-weight: 700;
   color: #1a1a1a;
-  margin-bottom: 16px;
+  margin: 0;
   font-family: "Roboto Slab", serif;
-  padding-left: 80px;
+  padding: 80px 0 64px 80px;
   background: #f5f6fa;
   text-align: left;
   align-self: flex-start;
+}
+
+@media (max-width: 768px) {
+  .news-section {
+    padding: 40px 16px;
+  }
+  .news-section__title {
+    font-size: 28px;
+    line-height: 34px;
+    padding: 40px 0 40px 16px;
+    width: 100%;
+    text-align: left;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
 }

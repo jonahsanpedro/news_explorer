@@ -1,12 +1,12 @@
 import "./Footer.css";
 import github from "../../images/github.svg";
-import fb from "../../images/fb.svg";
+import LinkedIn from "../../images/LinkedIn.svg";
 import { NavLink } from "react-router-dom";
 
 function Footer() {
   return (
     <footer className="footer">
-      <p className="footer__text">&copy; 2024 Supersite, Powered by News API</p>
+      <p className="footer__text">&copy; 2025 Supersite, Powered by News API</p>
       <NavLink to="/" className="footer-home__button">
         Home
       </NavLink>
@@ -18,8 +18,16 @@ function Footer() {
       >
         TripleTen
       </a>
-      <img src={github} alt="GitHub Logo" className="footer-github__icon" />
-      <img src={fb} alt="Facebook Logo" className="footer-fb__icon" />
+      <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+        <img src={github} alt="GitHub Logo" className="footer-github__icon" />
+      </a>
+      <a
+        href="https://www.linkedin.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src={LinkedIn} alt="LinkedIn Logo" className="footer-fb__icon" />
+      </a>
     </footer>
   );
 }

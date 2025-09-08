@@ -6,9 +6,6 @@ function SuccessModal({ isOpen, onClose, onSignIn }) {
   return (
     <div className="modal-overlay">
       <div className="modal success-modal">
-        <div style={{ color: "red", fontWeight: "bold" }}>
-          DEBUG: SuccessModal is rendering!
-        </div>
         <button className="modal__close" onClick={onClose} aria-label="Close">
           &times;
         </button>

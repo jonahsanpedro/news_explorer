@@ -20,13 +20,10 @@ function NewsSection({
       <div>
         {isLoading ? (
           <Preloader />
-        ) : error ? (
-          <p className="error-message">{error}</p>
         ) : hasResults ? (
           <NewsList
             articles={articles}
             isLoggedIn={isLoggedIn}
-            error={error}
             handleSaveArticle={handleSaveArticle}
             handleRemoveArticle={handleRemoveArticle}
             showTitle={hasResults}

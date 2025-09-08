@@ -72,7 +72,7 @@ function App() {
     } catch (error) {
       console.log("Catch block hit for login");
       setError(error);
-      setActiveModal(""); // Close modal on error
+      // Do NOT close modal on error
       if (error instanceof Error) {
         console.error("Login failed (Error object):", error.message, error);
       } else {
@@ -96,7 +96,7 @@ function App() {
     } catch (error) {
       console.log("Catch block hit for registration");
       setError(error);
-      setActiveModal(""); // Close modal on error
+      // Do NOT close modal on error
       if (error instanceof Error) {
         console.error(
           "Registration failed (Error object):",
@@ -228,6 +228,7 @@ function App() {
           handleRegistration={handleRegistration}
           handleLoginClick={handleLoginClick}
           activeModal={activeModal}
+          registrationError={error}
         />
       </div>
     </>

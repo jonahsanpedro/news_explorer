@@ -19,7 +19,7 @@ const simulateRegistration = (email, password, username) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       if (testUsers.some((u) => u.email === email)) {
-        reject("Email already registered");
+        reject("This email is not available");
       } else {
         const newUser = { email, password, username };
         testUsers.push(newUser);

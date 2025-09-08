@@ -11,7 +11,7 @@ function SearchForm({
   const [error, setError] = useState("");
   const [visibleCount, setVisibleCount] = useState(3);
 
-  const handleSearch = async (searchTerm) => {
+  const handleSearch = (searchTerm) => {
     setIsLoading(true);
     setLastSearchKeyword(searchTerm);
     if (!searchTerm.trim()) {
@@ -23,27 +23,27 @@ function SearchForm({
     const sevenDaysAgo = new Date();
     sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
 
-    try {
-      const response = await fetch(
-        `${newsApiBaseUrl}?${new URLSearchParams(
-          params(searchTerm, sevenDaysAgo, new Date())
-        )}`
-      );
-      const data = await response.json();
-
-      if (!Array.isArray(data.articles)) {
-        setArticles([]);
-        setError("No articles found.");
+    fetch(
+      `${newsApiBaseUrl}?${new URLSearchParams(
+        params(searchTerm, sevenDaysAgo, new Date())
+      )}`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        if (!Array.isArray(data.articles)) {
+          setArticles([]);
+          setError("No articles found.");
+          setIsLoading(false);
+          return;
+        }
+        setArticles(data.articles, searchTerm);
+        setVisibleCount(3);
         setIsLoading(false);
-        return;
-      }
-      setArticles(data.articles, searchTerm);
-      setVisibleCount(3);
-      setIsLoading(false);
-    } catch (error) {
-      setError("An error occurred while fetching news.");
-      setIsLoading(false);
-    }
+      })
+      .catch((error) => {
+        setError("An error occurred while fetching news.");
+        setIsLoading(false);
+      });
   };
 
   const handleSubmit = (e) => {

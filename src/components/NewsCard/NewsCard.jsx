@@ -110,7 +110,7 @@ export function NewsCard({
       <p className="news__card-date">{formattedDate}</p>
       <h1 className="news__card-title">{article.title}</h1>
       <p className="news__card-description">{article.description}</p>
-      <footer>
+      <footer className="news__card-footer">
         <p className="news__card-source">{article.source.name}</p>
         {cardSaved && (
           <span className="news__card-saved-message">{saveMessage}</span>
