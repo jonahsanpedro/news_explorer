@@ -5,15 +5,8 @@ import { useLocation, NavLink } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
 import logoutIcon from "../../images/logout.svg";
 
-function Header({
-  isLoggedIn,
-  user,
-  handleLoginClick,
-  handleRegistrationClick,
-  handleLogout,
-}) {
+function Header({ isLoggedIn, user, handleLoginClick, handleLogout }) {
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [activeModal, setActiveModal] = useState("");
   const location = useLocation();
   const homeTextRef = useRef(null);
   const savedTextRef = useRef(null);
@@ -42,12 +35,12 @@ function Header({
           className="header__logo"
         />
       </NavLink>
-      <div className="header__right" style={{ position: "relative" }}>
+      <nav className="header__right" style={{ position: "relative" }}>
         <NavLink
           to="/"
           className={`header__home-button${
             location.pathname === "/" ? " header__home-button--active" : ""
-          }`}
+          } header__hide-mobile-320`}
         >
           <span ref={homeTextRef}>Home</span>
         </NavLink>
@@ -56,7 +49,7 @@ function Header({
             to="/saved-news"
             className={`header__link${
               location.pathname === "/saved-news" ? " header__link_active" : ""
-            }`}
+            } header__hide-mobile-320`}
           >
             <span ref={savedTextRef}>Saved articles</span>
           </NavLink>
@@ -64,7 +57,7 @@ function Header({
         {/* Animated underline bar */}
         <div
           ref={barRef}
-          className="header__active-bar"
+          className="header__active-bar header__hide-mobile-320"
           style={{
             position: "absolute",
             bottom: 0,
@@ -80,7 +73,7 @@ function Header({
         />
         {isLoggedIn ? (
           <button
-            className="header__username-button"
+            className="header__username-button header__hide-mobile-320"
             type="button"
             onClick={handleLogout}
           >
@@ -93,7 +86,7 @@ function Header({
           </button>
         ) : (
           <button
-            className="header__signin-button"
+            className="header__signin-button header__hide-mobile-320"
             type="button"
             onClick={handleLoginClick}
           >
@@ -101,7 +94,9 @@ function Header({
           </button>
         )}
         <button
-          className="header__menu-btn"
+          className={`header__menu-btn${
+            location.pathname === "/saved-news" ? " menu-btn--black" : ""
+          }`}
           aria-label="Menu"
           onClick={() => setDrawerOpen(true)}
         >
@@ -151,14 +146,26 @@ function Header({
               type="button"
               onClick={() => {
                 setDrawerOpen(false);
-                handleLoginClick();
+                isLoggedIn ? handleLogout() : handleLoginClick();
               }}
             >
-              Sign In
+              {isLoggedIn ? (
+                <>
+                  {user?.username}
+                  <img
+                    src={logoutIcon}
+                    alt="Logout"
+                    className="header__logout-icon"
+                    style={{ marginLeft: 8 }}
+                  />
+                </>
+              ) : (
+                "Sign In"
+              )}
             </button>
           </div>
         )}
-      </div>
+      </nav>
     </header>
   );
 }

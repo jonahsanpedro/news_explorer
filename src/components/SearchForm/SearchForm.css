@@ -1,7 +1,8 @@
 .search-form {
   margin: 40px auto 80px auto;
-  width: 608px;
-  height: 64px;
+  /* w: 608px h: 64px */
+  width: 42vw;
+  height: 4vw;
   white-space: nowrap;
 }
 
@@ -14,9 +15,9 @@
   font-size: 16px;
   font-weight: 400;
   line-height: 2px;
-  font-family: "Roboto";
-  width: 440px;
-  height: 64px;
+  font-family: "Roboto", Arial, sans-serif;
+  width: 38vw;
+  height: 4vw;
   border: none;
 }
 
@@ -27,11 +28,11 @@
 }
 
 .search-form__button {
-  font-family: "Roboto";
+  font-family: "Roboto", Arial, sans-serif;
   font-size: 18px;
   font-weight: 500;
-  width: 168px;
-  height: 64px;
+  width: 12vw;
+  height: 4vw;
   border-radius: 100px;
   border: none;
   background-color: #2f71e5;
@@ -39,38 +40,18 @@
   position: relative;
   padding: 0;
   color: white;
-  right: 50px;
-}
-
-@media (min-width: 1440px) {
-  .search-form {
-    margin: 40px auto 80px auto;
-    width: 608px;
-    height: 64px;
-  }
-  .search-form__input {
-    width: 500px;
-    height: 64px;
-    font-size: 16px;
-    padding-left: 20px;
-  }
-  .search-form__button {
-    width: 168px;
-    height: 64px;
-    font-size: 18px;
-    right: 50px;
-  }
+  right: 5vw;
 }
 
 @media (max-width: 768px) {
   .search-form {
     margin: 20px auto 40px auto;
-    width: 452px;
+    width: 74vw;
     height: 48px;
     padding: 0 16px;
   }
   .search-form__input {
-    width: 400px;
+    width: 52vw;
     height: 48px;
     font-size: 14px;
     padding-left: 16px;
@@ -83,14 +64,14 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 320px) {
   .search-form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 20px auto 40px auto;
+    margin: 40px auto 0 auto;
     width: 100%;
-    max-width: 360px;
+    max-width: 288px;
     height: 150px;
     padding: 0 16px;
   }
@@ -109,5 +90,6 @@
     font-size: 14px;
     right: 40px;
     border-radius: 100px;
+    margin-top: 16px;
   }
 }

@@ -1,8 +1,7 @@
-/* White background for news-list-container in Saved News page */
 .saved-news__container .news-list-container {
   background: #fff;
 }
-/* Search Results Section */
+
 .news-list-container {
   background: #f5f6fa;
 
@@ -39,7 +38,6 @@
   }
 }
 
-/* Show More Button */
 .show-more__button {
   height: 64px;
   width: 288px;
@@ -47,7 +45,7 @@
   border: none;
   border-radius: 100px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
   font-size: 18px;
   font-weight: 500;
   color: #1a1b22;
@@ -59,6 +57,5 @@
 }
 
 .show-more__button:hover {
-  /* box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12); */
   background-color: #e8e8e8;
 }

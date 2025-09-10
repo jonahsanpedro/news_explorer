@@ -1,6 +1,14 @@
 .about {
   display: flex;
   flex-direction: row;
+  max-width: 1440px;
+  width: 100%;
+  background: white;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
 }
 
 .about__title {
@@ -8,16 +16,21 @@
   font-size: 40px;
   font-weight: 400;
   line-height: 46px;
-  width: 600px;
-  height: 46px;
-  font-family: "Roboto Slab";
+  max-width: 100%;
+  font-family: "Roboto Slab", Georgia, serif;
   margin: 131px 216px 24px 56px;
 }
 
 .about__image {
-  width: 464px;
-  height: 464px;
-  margin: 80px 0 80px 104px;
+  display: block;
+  max-width: 464px;
+  max-height: 464px;
+  width: 32vw;
+  height: 32vw;
+  /* margin: 80px 0 0 104px; */
+  margin-left: 5vw;
+  margin-top: 5vw;
+  border-radius: 50%;
 }
 
 .about__description {
@@ -25,21 +38,16 @@
   font-size: 18px;
   font-weight: 400;
   line-height: 24px;
-  margin: 24px 216px 303px 56px;
-  width: 600px;
+  margin-left: 56px;
   height: auto;
+  max-width: 100%;
 }
 
 .about__content {
   display: flex;
   flex-direction: column;
   color: black;
-}
-
-@media (max-width: 1440px) {
-  .about__image {
-    border-radius: 50%;
-  }
+  width: 100%;
 }
 
 @media (max-width: 768px) {
@@ -48,14 +56,14 @@
     align-items: center;
     justify-content: center;
     text-align: left;
-    width: 100vw;
+    width: 100%;
     padding: 0 16px;
     max-width: 768px;
     box-sizing: border-box;
   }
   .about__image {
-    width: 232px;
-    height: 232px;
+    width: 32vw;
+    height: 32vw;
     margin: 61px 32px 61px 40px;
     border-radius: 50%;
     object-fit: cover;
@@ -71,21 +79,35 @@
     font-size: 16px;
     margin: 12px 0 24px 0;
     width: 100%;
-    max-width: 90vw;
+    max-width: 100%;
     box-sizing: border-box;
     text-align: center;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 320px) {
   .about {
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    width: 100vw;
+    max-width: 100%;
     padding: 0 8px;
     box-sizing: border-box;
     background: none;
+  }
+
+  .about__image {
+    margin: 60px 0 60px 0;
+    width: 232px;
+    height: 232px;
+  }
+
+  .about__title {
+    max-width: 320px;
+    font-size: 24px;
+    line-height: 32px;
+    margin: 24px 0 16px 0;
+    text-align: center;
   }
 }

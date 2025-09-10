@@ -10,7 +10,7 @@
 }
 
 .saved-news__title {
-  font-family: "Roboto", serif;
+  font-family: "Roboto", Arial, sans-serif;
   color: rgba(26, 27, 34, 0.5);
   font-size: 18px;
   font-weight: 400;
@@ -19,7 +19,7 @@
 }
 
 .saved-news__username {
-  font-family: "Roboto Slab", serif;
+  font-family: "Roboto Slab", Georgia, serif;
   font-size: 40px;
   font-weight: 400;
   width: 530px;
@@ -28,7 +28,7 @@
 }
 
 .saved-news__keywords-title {
-  font-family: "Roboto", serif;
+  font-family: "Roboto", Arial, sans-serif;
   color: rgba(26, 27, 34, 1);
   font-size: 18px;
   font-weight: 400;
@@ -43,7 +43,7 @@
 }
 
 .saved-news__keywords {
-  font-family: "Roboto", serif;
+  font-family: "Roboto", Arial, sans-serif;
   font-size: 18px;
   font-weight: 700;
   color: rgba(26, 27, 34, 0.7);
@@ -51,7 +51,7 @@
 }
 
 .saved-news__no-articles {
-  font-family: "Roboto", serif;
+  font-family: "Roboto", Arial, sans-serif;
   color: rgba(26, 27, 34, 0.5);
   font-size: 18px;
   font-weight: 400;
@@ -61,7 +61,7 @@
 .saved-news__not-logged-in {
   background: white;
   min-height: 100vh;
-  width: 100vw;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -105,8 +105,7 @@
 
 @media (max-width: 768px) {
   .saved-news__container {
-    min-height: 0;
-    padding-bottom: 16px;
+    min-height: auto;
   }
   .saved-news__title {
     padding-left: 16px;

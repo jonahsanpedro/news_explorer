@@ -17,13 +17,16 @@ function NewsSection({
   const hasResults = Array.isArray(articles) && articles.length > 0;
   return (
     <>
-      <div>
+      <section>
         {isLoading ? (
           <Preloader />
+        ) : error ? (
+          <p className="error-message">{error}</p>
         ) : hasResults ? (
           <NewsList
             articles={articles}
             isLoggedIn={isLoggedIn}
+            error={error}
             handleSaveArticle={handleSaveArticle}
             handleRemoveArticle={handleRemoveArticle}
             showTitle={hasResults}
@@ -43,7 +46,7 @@ function NewsSection({
             </p>
           </div>
         ) : null}
-      </div>
+      </section>
     </>
   );
 }

@@ -1,32 +1,20 @@
-/* Error message styles */
-.register-modal__error {
-  color: #d32f2f;
-  background: none;
-  border-radius: 0;
-  padding: 0;
-  margin: 16px 0 24px 0;
-  font-size: 16px;
-  font-weight: 500;
-  text-align: center;
-  display: block;
-}
 .register-modal__title {
   margin-top: 0;
-  font-family: "Roboto", serif;
+  font-family: "Roboto", Arial, sans-serif;
   font-weight: 900;
   font-size: 24px;
   line-height: 100%;
 }
 
 .register-modal__input-label {
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", Arial, sans-serif;
   font-weight: 400;
   font-size: 12px;
   line-height: 100%;
 }
 
 .register-modal__input {
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", Arial, sans-serif;
   width: 100%;
   font-size: 1rem;
   padding: 10px 0 10px 0;

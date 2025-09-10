@@ -8,7 +8,7 @@ function Register({
   handleRegistration,
   handleLoginClick,
   activeModal = "",
-  registrationError = "",
+  error,
 }) {
   const [data, setData] = useState({ email: "", password: "", username: "" });
 
@@ -24,19 +24,9 @@ function Register({
     setData({ ...data, username: e.target.value });
   };
 
-  const [localError, setLocalError] = useState("");
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    if (!data.email || !data.password || !data.username) {
-      setLocalError("Please fill out all fields.");
-      return;
-    }
-    if (!/^\S+@\S+\.\S+$/.test(data.email)) {
-      setLocalError("This email is not available");
-      return;
-    }
-    setLocalError("");
-    await handleRegistration(data);
+    handleRegistration(data);
   };
 
   const onSwitch = () => {
@@ -64,6 +54,7 @@ function Register({
       data={data}
     >
       <div className="register-modal">
+        {error && <div className="register-modal__error">{error}</div>}
         <h2 className="register-modal__title">Sign up</h2>
         <label htmlFor="register-email" className="register-modal__input-label">
           Email
@@ -72,13 +63,12 @@ function Register({
           id="register-email"
           required
           name="email"
-          type="text"
+          type="email"
           value={data.email}
           className="register-modal__input"
           placeholder="Enter email"
           onChange={handleEmailChange}
         />
-        {/* ...existing code... */}
         <label
           htmlFor="register-password"
           className="register-modal__input-label"
@@ -111,11 +101,6 @@ function Register({
           placeholder="Enter username"
           onChange={handleUsernameChange}
         />
-        {(localError || registrationError) && (
-          <div className="register-modal__error">
-            {localError || registrationError}
-          </div>
-        )}
         <button
           type="submit"
           className={`register-modal__button${

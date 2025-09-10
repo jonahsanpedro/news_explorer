@@ -2,16 +2,10 @@ import "./SearchForm.css";
 import { useState } from "react";
 import { newsApiBaseUrl, params } from "../../utils/constants";
 
-function SearchForm({
-  setArticles,
-  isLoading,
-  setIsLoading,
-  setLastSearchKeyword,
-}) {
+function SearchForm({ setArticles, setIsLoading, setLastSearchKeyword }) {
   const [error, setError] = useState("");
-  const [visibleCount, setVisibleCount] = useState(3);
 
-  const handleSearch = (searchTerm) => {
+  const handleSearch = async (searchTerm) => {
     setIsLoading(true);
     setLastSearchKeyword(searchTerm);
     if (!searchTerm.trim()) {
@@ -23,27 +17,26 @@ function SearchForm({
     const sevenDaysAgo = new Date();
     sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
 
-    fetch(
-      `${newsApiBaseUrl}?${new URLSearchParams(
-        params(searchTerm, sevenDaysAgo, new Date())
-      )}`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        if (!Array.isArray(data.articles)) {
-          setArticles([]);
-          setError("No articles found.");
-          setIsLoading(false);
-          return;
-        }
-        setArticles(data.articles, searchTerm);
-        setVisibleCount(3);
+    try {
+      const response = await fetch(
+        `${newsApiBaseUrl}?${new URLSearchParams(
+          params(searchTerm, sevenDaysAgo, new Date())
+        )}`
+      );
+      const data = await response.json();
+
+      if (!Array.isArray(data.articles)) {
+        setArticles([]);
+        setError("No articles found.");
         setIsLoading(false);
-      })
-      .catch((error) => {
-        setError("An error occurred while fetching news.");
-        setIsLoading(false);
-      });
+        return;
+      }
+      setArticles(data.articles, searchTerm);
+      setIsLoading(false);
+    } catch (error) {
+      setError("An error occurred while fetching news.");
+      setIsLoading(false);
+    }
   };
 
   const handleSubmit = (e) => {

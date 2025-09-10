@@ -1,7 +1,6 @@
 import "./NewsList.css";
 import { useState } from "react";
 import NewsCard from "../NewsCard/NewsCard.jsx";
-import Preloader from "../Preloader/Preloader.jsx";
 
 function NewsList({
   articles,
@@ -32,7 +31,7 @@ function NewsList({
   };
 
   return (
-    <div className="news-list-container">
+    <section className="news-list-container">
       {showTitle && <h1 className="news-section__title">Search results</h1>}
       <div className="news-list">
         {visibleArticles.map((article, index) => (
@@ -53,7 +52,7 @@ function NewsList({
           Show More
         </button>
       )}
-    </div>
+    </section>
   );
 }
 

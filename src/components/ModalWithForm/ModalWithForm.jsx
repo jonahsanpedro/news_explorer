@@ -1,5 +1,5 @@
 import "./ModalWithForm.css";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import close from "../../images/close.svg";
 
 function ModalWithForm({
@@ -8,13 +8,10 @@ function ModalWithForm({
   title,
   children,
   onSubmit,
-  buttonText,
   onSwitch,
   activeModal = "",
   hideOr = false,
 }) {
-  const modalRef = useRef();
-
   const handleBackdropClick = (e) => {
     if (e.target === e.currentTarget) {
       onClose();

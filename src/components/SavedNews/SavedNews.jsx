@@ -22,7 +22,7 @@ function SavedNews({ isLoggedIn, user, savedArticles, handleRemoveArticle }) {
       : uniqueKeywords.join(", ");
 
   return (
-    <div className="saved-news__container">
+    <section className="saved-news__container">
       <h2 className="saved-news__title">Saved articles</h2>
       <p className="saved-news__username">
         {user?.username}, you have {savedArticles.length} saved articles
@@ -43,7 +43,7 @@ function SavedNews({ isLoggedIn, user, savedArticles, handleRemoveArticle }) {
       ) : (
         <p className="saved-news__no-articles">No saved articles yet.</p>
       )}
-    </div>
+    </section>
   );
 }
 

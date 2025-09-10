@@ -7,7 +7,6 @@ import About from "../About/About.jsx";
 import Login from "../LoginModal/LoginModal.jsx";
 import Register from "../RegisterModal/RegisterModal.jsx";
 import NewsSection from "../NewsSection/NewsSection.jsx";
-import Preloader from "../Preloader/Preloader.jsx";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { useState } from "react";
 import SavedNews from "../SavedNews/SavedNews.jsx";
@@ -19,7 +18,8 @@ function App() {
   const [activeModal, setActiveModal] = useState("");
   const [user, setUser] = useState(null);
   const [articles, setArticles] = useState([]);
-  const [error, setError] = useState(null);
+  const [loginError, setLoginError] = useState("");
+  const [registerError, setRegisterError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [savedArticles, setSavedArticles] = useState([]);
   // Expose savedArticles for debugging
@@ -67,17 +67,12 @@ function App() {
       setIsLoggedIn(true);
       setUser(data.user);
       setActiveModal(""); // Close modal on success
-      setError(null); // Clear previous errors
+      setLoginError(""); // Clear previous login errors
       console.log("Login successful:", data);
     } catch (error) {
-      console.log("Catch block hit for login");
-      setError(error);
-      // Do NOT close modal on error
-      if (error instanceof Error) {
-        console.error("Login failed (Error object):", error.message, error);
-      } else {
-        console.error("Login failed (string or other):", error);
-      }
+      setLoginError(error instanceof Error ? error.message : error);
+      setActiveModal("login"); // Keep login modal open on error
+      console.error("Login failed:", error);
     }
   };
 
@@ -89,23 +84,14 @@ function App() {
     console.log("Attempting registration with:", { email, password, username });
     try {
       const result = await simulateRegistration(email, password, username);
-      setActiveModal(""); // Close modal on success
-      setError(null); // Clear previous errors
-      setShowSuccessModal(true); // Show success modal
+      setActiveModal("");
+      setRegisterError("");
+      setShowSuccessModal(true);
       console.log("Registration successful:", result);
     } catch (error) {
-      console.log("Catch block hit for registration");
-      setError(error);
-      // Do NOT close modal on error
-      if (error instanceof Error) {
-        console.error(
-          "Registration failed (Error object):",
-          error.message,
-          error
-        );
-      } else {
-        console.error("Registration failed (string or other):", error);
-      }
+      setRegisterError(error instanceof Error ? error.message : error);
+      setActiveModal("register");
+      console.error("Registration failed:", error);
     }
   };
 
@@ -113,7 +99,8 @@ function App() {
     setIsLoggedIn(false);
     setUser(null);
     setActiveModal("");
-    setError(null);
+    setLoginError("");
+    setRegisterError("");
     setArticles([]);
     setSavedArticles([]);
     setIsLoading(false);
@@ -168,7 +155,6 @@ function App() {
                   <Main
                     isLoggedIn={isLoggedIn}
                     isLoading={isLoading}
-                    error={error}
                     setArticles={setArticlesAndSearch}
                     setIsLoading={setIsLoading}
                     setLastSearchKeyword={setLastSearchKeyword}
@@ -194,7 +180,6 @@ function App() {
               <NewsSection
                 isLoading={isLoading}
                 articles={articles}
-                error={error}
                 isLoggedIn={isLoggedIn}
                 handleSaveArticle={handleSaveArticle}
                 handleRemoveArticle={handleRemoveArticle}
@@ -221,6 +206,8 @@ function App() {
           handleRegistrationClick={handleRegistrationClick}
           onSwitch={handleRegistrationClick}
           activeModal={activeModal}
+          error={loginError}
+          setError={setLoginError}
         />
         <Register
           isOpen={activeModal === "register"}
@@ -228,7 +215,8 @@ function App() {
           handleRegistration={handleRegistration}
           handleLoginClick={handleLoginClick}
           activeModal={activeModal}
-          registrationError={error}
+          error={registerError}
+          setError={setRegisterError}
         />
       </div>
     </>
