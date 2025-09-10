@@ -6,6 +6,7 @@ This application is structured with reusable functional components such as Heade
 
 [Github Repository](https://github.com/jonahsanpedro/news_explorer)
 [Github Pull Request](https://github.com/jonahsanpedro/news_explorer/pull/1)
+[Github Pages](https://jonahsanpedro.github.io/news_explorer)
 
 # React + Vite
 
