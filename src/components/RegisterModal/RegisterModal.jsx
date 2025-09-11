@@ -54,7 +54,6 @@ function Register({
       data={data}
     >
       <div className="register-modal">
-        {error && <div className="register-modal__error">{error}</div>}
         <h2 className="register-modal__title">Sign up</h2>
         <label htmlFor="register-email" className="register-modal__input-label">
           Email
@@ -101,6 +100,7 @@ function Register({
           placeholder="Enter username"
           onChange={handleUsernameChange}
         />
+        {error && <div className="register-modal__error">{error}</div>}
         <button
           type="submit"
           className={`register-modal__button${
