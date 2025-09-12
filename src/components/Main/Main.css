@@ -42,13 +42,13 @@
 }
 @media (max-width: 768px) {
   .main {
+    display: flex;
     max-width: 100%;
-    padding: 0 16px;
+    justify-content: center;
   }
   .main__title {
     font-size: 40px;
     line-height: 48px;
-    width: 100%;
     height: auto;
     margin-bottom: 24px;
   }
