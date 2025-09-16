@@ -9,12 +9,12 @@ function Footer() {
       <p className="footer__text">&copy; 2025 Supersite, Powered by News API</p>
       <nav className="footer__buttons">
         <div className="footer__left-spacer">
-          <NavLink to="/" className="footer-home__button">
+          <NavLink to="/" className="footer__home-button">
             Home
           </NavLink>
           <a
             href="https://tripleten.com/"
-            className="footer-tripleten__button"
+            className="footer__tripleten-button"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -26,7 +26,7 @@ function Footer() {
             href="https://github.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="footer-github__button"
+            className="footer__github-button"
           >
             <img src={github} alt="GitHub Logo" />
           </a>
@@ -34,7 +34,7 @@ function Footer() {
             href="https://www.linkedin.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="footer-linkedin__button"
+            className="footer__linkedin-button"
           >
             <img src={LinkedIn} alt="LinkedIn Logo" />
           </a>

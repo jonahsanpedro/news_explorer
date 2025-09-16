@@ -39,8 +39,8 @@ function Header({ isLoggedIn, user, handleLoginClick, handleLogout }) {
         <NavLink
           to="/"
           className={`header__home-button${
-            location.pathname === "/" ? " header__home-button--active" : ""
-          } header__hide-mobile-320`}
+            location.pathname === "/" ? " header__home-button_active" : ""
+          } header__hide-mobile`}
         >
           <span ref={homeTextRef}>Home</span>
         </NavLink>
@@ -49,7 +49,7 @@ function Header({ isLoggedIn, user, handleLoginClick, handleLogout }) {
             to="/saved-news"
             className={`header__link${
               location.pathname === "/saved-news" ? " header__link_active" : ""
-            } header__hide-mobile-320`}
+            } header__hide-mobile`}
           >
             <span ref={savedTextRef}>Saved articles</span>
           </NavLink>
@@ -57,7 +57,7 @@ function Header({ isLoggedIn, user, handleLoginClick, handleLogout }) {
         {/* Animated underline bar */}
         <div
           ref={barRef}
-          className="header__active-bar header__hide-mobile-320"
+          className="header__active-bar header__hide-mobile"
           style={{
             position: "absolute",
             bottom: 0,
@@ -73,7 +73,7 @@ function Header({ isLoggedIn, user, handleLoginClick, handleLogout }) {
         />
         {isLoggedIn ? (
           <button
-            className="header__username-button header__hide-mobile-320"
+            className="header__username-button header__hide-mobile"
             type="button"
             onClick={handleLogout}
           >
@@ -86,7 +86,7 @@ function Header({ isLoggedIn, user, handleLoginClick, handleLogout }) {
           </button>
         ) : (
           <button
-            className="header__signin-button header__hide-mobile-320"
+            className="header__signin-button header__hide-mobile"
             type="button"
             onClick={handleLoginClick}
           >
@@ -107,7 +107,7 @@ function Header({ isLoggedIn, user, handleLoginClick, handleLogout }) {
           <div className="header__drawer">
             <NavLink
               to="/"
-              className="header__drawer-logo-link"
+              className="header__drawer-logo"
               onClick={() => setDrawerOpen(false)}
             >
               <img

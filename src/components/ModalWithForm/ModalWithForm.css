@@ -86,17 +86,13 @@
 
 @media (max-width: 320px) {
   .modal__close {
-    top: -30px;
-    right: -30px;
+    top: -45px;
+    right: 30px;
   }
 
   .modal__container {
     height: 100vh;
-    margin-top: 155px;
-  }
-  .modal__close {
-    top: -40px;
-    right: -40px;
+    margin-top: 100px;
   }
   .modal__title {
     font-size: 1.5rem;

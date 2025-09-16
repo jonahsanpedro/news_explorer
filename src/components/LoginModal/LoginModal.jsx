@@ -44,9 +44,9 @@ const Login = ({
       onSwitch={onSwitch}
       activeModal={activeModal}
     >
-      <div className="login-modal">
-        <h2 className="login-modal__title">Sign in</h2>
-        <label htmlFor="login-email" className="login-modal__input-label">
+      <div className="login__modal">
+        <h2 className="login__modal-title">Sign in</h2>
+        <label htmlFor="login-email" className="login__modal-input-label">
           Email
         </label>
         <input
@@ -55,11 +55,11 @@ const Login = ({
           name="email"
           type="email"
           value={data.email}
-          className="login-modal__input"
+          className="login__modal-input"
           placeholder="Enter email"
           onChange={(e) => setData({ ...data, email: e.target.value })}
         />
-        <label htmlFor="login-password" className="login-modal__input-label">
+        <label htmlFor="login-password" className="login__modal-input-label">
           Password
         </label>
         <input
@@ -68,16 +68,16 @@ const Login = ({
           name="password"
           type="password"
           value={data.password}
-          className="login-modal__input"
+          className="login__modal-input"
           placeholder="Enter password"
           onChange={(e) => setData({ ...data, password: e.target.value })}
         />
-        {error && <div className="login-modal__error">{error}</div>}
+        {error && <div className="login__modal-error">{error}</div>}
         <button
           type="submit"
-          className={`login-modal__button${
+          className={`login__modal-button${
             data.email && data.password && isValidEmail(data.email)
-              ? " login-modal__button--active"
+              ? " login__modal-button_active"
               : ""
           }`}
           disabled={!data.email || !data.password || !isValidEmail(data.email)}

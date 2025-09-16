@@ -1,4 +1,4 @@
-.preloader {
+.preloader__container {
   font-family: "Roboto", Arial, sans-serif;
   display: flex;
   flex-direction: column;
@@ -6,7 +6,9 @@
   justify-content: center;
   min-height: 282px;
   width: 100%;
-  background: #f5f6fa;
+  background: white;
+  box-sizing: border-box;
+  padding: 48px 0;
 }
 
 .circle-preloader {
@@ -25,9 +27,9 @@
   }
 }
 
-.preloader p {
+.preloader__text {
   font-size: 18px;
   color: #444;
-  margin: 0;
+  margin-top: 16px;
   text-align: center;
 }

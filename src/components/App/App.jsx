@@ -159,6 +159,11 @@ function App() {
                     setIsLoading={setIsLoading}
                     setLastSearchKeyword={setLastSearchKeyword}
                     lastSearchKeyword={lastSearchKeyword}
+                    articles={articles}
+                    handleSaveArticle={handleSaveArticle}
+                    handleRemoveArticle={handleRemoveArticle}
+                    hasSearched={hasSearched}
+                    savedArticles={savedArticles}
                   />
                 }
               />
@@ -177,7 +182,7 @@ function App() {
           </div>
           {location.pathname !== "/saved-news" && (
             <>
-              <NewsSection
+              {/* <NewsSection
                 isLoading={isLoading}
                 articles={articles}
                 isLoggedIn={isLoggedIn}
@@ -185,8 +190,7 @@ function App() {
                 handleRemoveArticle={handleRemoveArticle}
                 savedArticles={savedArticles}
                 hasSearched={hasSearched}
-              />
-              <About />
+              /> */}
             </>
           )}
           <Footer />

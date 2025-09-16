@@ -23,6 +23,7 @@
   white-space: nowrap;
   color: #b6bcbf;
   max-width: 100%;
+  padding-left: 100px;
 }
 
 .footer__buttons {
@@ -32,9 +33,10 @@
   max-width: 100%;
   min-width: 80px;
   gap: 1vw;
+  padding-right: 100px;
 }
 
-.footer-home__button {
+.footer__home-button {
   font-family: "Roboto", Arial, sans-serif;
   font-size: 18px;
   line-height: 24px;
@@ -47,7 +49,7 @@
   width: 100%;
 }
 
-.footer-tripleten__button {
+.footer__tripleten-button {
   font-family: "Roboto", Arial, sans-serif;
   font-size: 18px;
   line-height: 24px;
@@ -80,7 +82,6 @@
     height: auto;
   }
   .footer__text {
-    margin: 0 16px;
     text-align: left;
     font-size: 14px;
     line-height: 18px;
@@ -91,13 +92,13 @@
     /* gap: 1vw; */
     margin: 0;
   }
-  .footer-home__button {
+  .footer__home-button {
     margin: 0;
     font-size: 14px;
     line-height: 18px;
     /* padding-right: 2vw; */
   }
-  .footer-tripleten__button {
+  .footer__tripleten-button {
     margin: 0;
     font-size: 14px;
     line-height: 18px;
@@ -115,7 +116,7 @@
     gap: 1vw;
   }
 }
-@media (max-width: 320px) {
+@media (max-width: 600px) {
   .footer {
     display: flex;
     flex-direction: column-reverse;
@@ -127,6 +128,7 @@
     font-size: 14px;
     line-height: 18px;
     margin-top: 16px;
+    padding: 0;
   }
   .footer__left-spacer {
     display: flex;
@@ -134,9 +136,18 @@
   }
   .footer__right-spacer {
     display: flex;
+    padding-left: 100px;
   }
   .footer__buttons {
     width: 100%;
-    justify-content: space-between;
+    padding: 0;
+    justify-content: space-evenly;
+  }
+}
+
+@media (max-width: 320px) {
+  .modal__close {
+    top: 8px;
+    right: 8px;
   }
 }

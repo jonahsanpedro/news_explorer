@@ -23,15 +23,15 @@ function SavedNews({ isLoggedIn, user, savedArticles, handleRemoveArticle }) {
 
   return (
     <section className="saved-news__container">
-      <h2 className="saved-news__title">Saved articles</h2>
-      <p className="saved-news__username">
+      <h1 className="saved-news__title">Saved articles</h1>
+      <h2 className="saved-news__username">
         {user?.username}, you have {savedArticles.length} saved articles
-      </p>
+      </h2>
       {uniqueKeywords.length > 0 && (
-        <p className="saved-news__keywords-title">
+        <h3 className="saved-news__keywords-title">
           By keywords:{" "}
           <span className="saved-news__keywords-list">{keywordsText}</span>
-        </p>
+        </h3>
       )}
       {Array.isArray(savedArticles) && savedArticles.length > 0 ? (
         <NewsList

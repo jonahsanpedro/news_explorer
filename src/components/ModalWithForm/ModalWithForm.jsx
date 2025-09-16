@@ -31,6 +31,15 @@ function ModalWithForm({
     return () => document.removeEventListener("keydown", handleEscapeKey);
   }, [isOpen, onClose]);
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add("modal_opened");
+    } else {
+      document.body.classList.remove("modal_opened");
+    }
+    return () => document.body.classList.remove("modal_opened");
+  }, [isOpen]);
+
   return (
     <div
       className={`modal ${isOpen ? "modal_opened" : ""}`}

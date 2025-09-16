@@ -15,9 +15,9 @@ function NewsList({
   const [visibleCount, setVisibleCount] = useState(3);
 
   // Only show 'No articles found.' if error prop is set
-  if (typeof error !== "undefined" && error) {
-    return <p>No articles found.</p>;
-  }
+  // if (typeof error !== "undefined" && error) {
+  //   return <p>No articles found.</p>;
+  // }
 
   if (!Array.isArray(articles) || articles.length === 0) {
     return null;
@@ -31,8 +31,8 @@ function NewsList({
   };
 
   return (
-    <section className="news-list-container">
-      {showTitle && <h1 className="news-section__title">Search results</h1>}
+    <section className="news-list__container">
+      {showTitle && <h1 className="news-list__title">Search results</h1>}
       <div className="news-list">
         {visibleArticles.map((article, index) => (
           <NewsCard

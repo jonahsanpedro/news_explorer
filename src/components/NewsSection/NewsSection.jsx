@@ -17,7 +17,7 @@ function NewsSection({
   const hasResults = Array.isArray(articles) && articles.length > 0;
   return (
     <>
-      <section>
+      <section className="news-section__container">
         {isLoading ? (
           <Preloader />
         ) : error ? (

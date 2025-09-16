@@ -25,13 +25,23 @@ function SearchForm({ setArticles, setIsLoading, setLastSearchKeyword }) {
       );
       const data = await response.json();
 
+      console.log(
+        "Articles received:",
+        data.articles,
+        "Type:",
+        typeof data.articles,
+        "IsArray:",
+        Array.isArray(data.articles)
+      );
+
       if (!Array.isArray(data.articles)) {
         setArticles([]);
-        setError("No articles found.");
+        // setError("No articles found.");
         setIsLoading(false);
         return;
       }
       setArticles(data.articles, searchTerm);
+      setError("");
       setIsLoading(false);
     } catch (error) {
       setError("An error occurred while fetching news.");
