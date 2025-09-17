@@ -108,6 +108,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 48px;
 }
 
 .header__logout-icon {
@@ -159,13 +160,22 @@
     width: 120px;
   }
   .header__active-bar {
-    display: none;
+    top: 54px;
   }
   .header__logo-link {
     margin-right: 16px;
   }
 
-  .header__home-button,
+  .header__signin-button,
+  .header__username-button {
+    font-size: 15px;
+    padding: 0 12px;
+    min-width: 100px;
+    width: auto;
+  }
+
+  /* If you want tablet view to have a drawer function */
+  /* .header__home-button,
   .header__signin-button,
   .header__nav,
   .header__link,
@@ -247,18 +257,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 48px;
   }
 
   .header__drawer-close {
     color: white;
-  }
+  } */
 
   .header__menu-btn.menu-btn--black img {
     filter: invert(1);
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 600px) {
   /* Make menu button icon black on /saved-news route */
   .header__menu-btn.menu-btn--black img {
     filter: invert(1);

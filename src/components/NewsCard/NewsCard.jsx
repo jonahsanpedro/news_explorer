@@ -57,8 +57,8 @@ export function NewsCard({
     : "";
 
   return (
-    <div className="news__card">
-      <div className="news__card-image-container">
+    <div className="news-card">
+      <div className="news-card__image-container">
         {isSavedNewsPage && article.keyword && (
           <span className="news-card__keyword-badge">{article.keyword}</span>
         )}

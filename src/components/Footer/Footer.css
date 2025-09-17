@@ -85,8 +85,10 @@
     text-align: left;
     font-size: 14px;
     line-height: 18px;
+    padding-left: 50px;
   }
   .footer__buttons {
+    padding-right: 50px;
     display: flex;
     flex-direction: row;
     /* gap: 1vw; */

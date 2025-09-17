@@ -1,4 +1,4 @@
-.login__modal-title {
+.login-modal__title {
   margin-top: 0;
   font-family: "Roboto", Arial, sans-serif;
   font-weight: 900;
@@ -6,7 +6,7 @@
   line-height: 100%;
 }
 
-.login__modal-input {
+.login-modal__input {
   font-family: "Inter", Arial, sans-serif;
   width: 100%;
   font-size: 1rem;
@@ -19,11 +19,11 @@
   color: #222;
 }
 
-.login__modal-input:focus {
+.login-modal__input:focus {
   border-bottom: 2px solid #2962ff;
 }
 
-.login__modal-input-label {
+.login-modal__input-label {
   font-family: "Inter", Arial, sans-serif;
   font-size: 0.95rem;
   color: #2962ff;
@@ -32,7 +32,7 @@
   margin-top: 0;
 }
 
-.login__modal-button {
+.login-modal__button {
   width: 100%;
   padding: 18px 0;
   border-radius: 32px;
@@ -48,12 +48,12 @@
   transition: background 0.2s;
 }
 
-.login__modal-button:disabled {
+.login-modal__button:disabled {
   background: #b6bcbf;
   cursor: not-allowed;
 }
 
-.login__modal-error {
+.login-modal__error {
   font-family: "Inter", Arial, sans-serif;
   color: #d32f2f;
   font-size: 0.9rem;
