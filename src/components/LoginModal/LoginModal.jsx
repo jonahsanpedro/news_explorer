@@ -77,7 +77,7 @@ const Login = ({
           type="submit"
           className={`login-modal__button${
             data.email && data.password && isValidEmail(data.email)
-              ? " login-modal__button_active"
+              ? " login-modal__button--active"
               : ""
           }`}
           disabled={!data.email || !data.password || !isValidEmail(data.email)}

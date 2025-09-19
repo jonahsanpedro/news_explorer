@@ -146,10 +146,3 @@
     justify-content: space-evenly;
   }
 }
-
-@media (max-width: 320px) {
-  .modal__close {
-    top: 8px;
-    right: 8px;
-  }
-}

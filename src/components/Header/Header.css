@@ -115,34 +115,10 @@
   margin-left: 12px;
 }
 
-.header__link.header__link_active {
+.header__link.header__link--active {
   color: black;
   font-weight: bold;
 }
-
-/* .header__home-button_active::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 3px;
-  border-bottom: 2px solid white;
-  position: relative;
-  top: 27px;
-}
-
-.header__link.header__link_active.active:after {
-  content: "";
-  display: block;
-  position: absolute;
-  left: 30px;
-  right: 24px;
-  bottom: 8px;
-  height: 3px;
-  top: 60px;
-  width: calc(100% - 60px);
-  border-bottom: 2px solid black;
-  z-index: 1;
-} */
 
 .header__right {
   display: flex;
@@ -270,7 +246,6 @@
 }
 
 @media screen and (max-width: 600px) {
-  /* Make menu button icon black on /saved-news route */
   .header__menu-btn.menu-btn--black img {
     filter: invert(1);
   }

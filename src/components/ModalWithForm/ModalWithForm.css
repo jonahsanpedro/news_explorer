@@ -84,10 +84,17 @@
   text-decoration: none;
 }
 
+@media (max-width: 600px) {
+  .modal__close {
+    top: -50px;
+    right: 0px;
+  }
+}
+
 @media (max-width: 320px) {
   .modal__close {
     top: -45px;
-    right: 30px;
+    right: 8px;
   }
 
   .modal__container {

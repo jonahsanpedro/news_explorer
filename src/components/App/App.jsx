@@ -3,10 +3,8 @@ import Header from "../Header/Header.jsx";
 import Footer from "../Footer/Footer.jsx";
 import { simulateLogin, simulateRegistration } from "../../utils/auth.js";
 import Main from "../Main/Main.jsx";
-import About from "../About/About.jsx";
 import Login from "../LoginModal/LoginModal.jsx";
 import Register from "../RegisterModal/RegisterModal.jsx";
-import NewsSection from "../NewsSection/NewsSection.jsx";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { useState } from "react";
 import SavedNews from "../SavedNews/SavedNews.jsx";
@@ -138,7 +136,7 @@ function App() {
             className={
               location.pathname === "/saved-news"
                 ? "saved-news__background"
-                : "background__image"
+                : "main__background-image"
             }
           >
             <Header

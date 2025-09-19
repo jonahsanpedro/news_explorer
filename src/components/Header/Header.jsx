@@ -39,7 +39,7 @@ function Header({ isLoggedIn, user, handleLoginClick, handleLogout }) {
         <NavLink
           to="/"
           className={`header__home-button${
-            location.pathname === "/" ? " header__home-button_active" : ""
+            location.pathname === "/" ? " header__home-button--active" : ""
           } header__hide-mobile`}
         >
           <span ref={homeTextRef}>Home</span>
