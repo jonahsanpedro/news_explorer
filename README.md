@@ -1,4 +1,4 @@
-Final Project - News Explorer
+# Final Project - News Explorer
 
 For my final project I created a responsive React application that will allow users to create a login requiring an email, username and password. After successful registration users can search for the latest news articles, save your favorites, and manage them with authentication.
 
