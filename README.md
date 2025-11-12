@@ -1,5 +1,5 @@
-<<<<<<< HEAD
 =======
+
 # Final Project - News Explorer
 
 For my final project I created a responsive React application that will allow users to create a login requiring an email, username and password. After successful registration users can search for the latest news articles, save your favorites, and manage them with authentication.
@@ -12,7 +12,6 @@ This application is structured with reusable functional components such as Heade
 [Github Pull Request](https://github.com/jonahsanpedro/news_explorer/pull/1)
 [Github Pages](https://jonahsanpedro.github.io/news_explorer/#/)
 
->>>>>>> 436af5335781f6a1b44cecd5a1a895f84ebffa96
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
