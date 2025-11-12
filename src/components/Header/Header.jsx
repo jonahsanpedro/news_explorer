@@ -48,7 +48,7 @@ function Header({ isLoggedIn, user, handleLoginClick, handleLogout }) {
           <NavLink
             to="/saved-news"
             className={`header__link${
-              location.pathname === "/saved-news" ? " header__link_active" : ""
+              location.pathname === "/saved-news" ? " header__link--active" : ""
             } header__hide-mobile`}
           >
             <span ref={savedTextRef}>Saved articles</span>
